@@ -1,0 +1,80 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Category'" [icon]="'fa fa-list-alt'"></app-page-header>
+    <div class="container">
+        <div>
+            <form #categoryForm="ngForm" (ngSubmit)="onSubmit(categoryForm)">
+                <div class="card card-outline-secondary">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-lg-12">
+                                <input class="form-control" type="hidden" name="ID" #name="ngModel" [(ngModel)]="apiService.selectedModel.ID" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Category</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" name="Name" #name="ngModel" [(ngModel)]="apiService.selectedModel.Name"
+                                    placeholder="Category" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Is Active</label>
+                            <div class="col-lg-9">
+                                <input class="checkbox-inline" type="checkbox" name="IsActive" #name="ngModel"
+                                    [(ngModel)]="apiService.selectedModel.IsActive">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label"></label>
+                            <div class="col-lg-2">
+                                <button type="submit" class="btn btn-success" [disabled]="!categoryForm.valid">
+                                    <i class="fa fa-floppy-o" aria-hidden="true"></i> {{submitType}}
+                                </button>
+                            </div>
+                            <div class="col-lg-2">
+                                <button type="submit" class="btn btn-danger" type="button" (click)="resetForm(categoryForm)">
+                                    <i class="fa fa-repeat"></i>
+                                    Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <br>
+
+        <div class="card card-outline-secondary">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Is Active ?</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let _category of category | paginate: { id: 'listing_pagination',
+                        itemsPerPage: 5,
+                        currentPage: page,
+                        totalItems: totalRec };">
+                        <td>{{_category.Name}}</td>
+                        <td>{{_category.IsActive ? 'Yes':'No'}}</td>
+                        <td>
+
+                            <button type="submit" class="btn btn-info" type="button" (click)="editCategory(_category.ID)">
+                                <i class="fa fa-pencil-square-o"></i>
+                                Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <pagination-controls id="listing_pagination" maxSize="10" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+            </div>
+        </div>
+    </div>
