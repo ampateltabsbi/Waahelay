@@ -1,12 +1,12 @@
 {
-  "name": "QPS",
+  "name": "Waahelay",
   "version": "7.0.0",
   "license": "Apache",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "gitbuild": "ng build --prod --base-href /start-angular/QPS/master/dist/",
+    "gitbuild": "ng build --prod --base-href /start-angular/Waahelay/master/dist/",
     "test": "ng test",
     "test-ci": "TEST_CI=true ng test",
     "lint": "ng lint",
