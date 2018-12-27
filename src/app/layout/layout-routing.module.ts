@@ -23,6 +23,7 @@ const routes: Routes = [
             { path: 'categoryType', loadChildren: './categorytype/categorytype.module#CategorytypeModule' },
             { path: 'categorydescription', loadChildren: './categorydescription/categorydescription.module#CategorydescriptionModule' },
             { path: 'country', loadChildren: './country/country.module#CountryModule' },
+            { path: 'state', loadChildren: './state/state.module#StateModule' },
             { path: 'city', loadChildren: './city/city.module#CityModule' }
         ]
     }
