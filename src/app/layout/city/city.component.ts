@@ -13,8 +13,7 @@ import { from } from 'rxjs';
 @Component({
   selector: 'app-city',
   templateUrl: './city.component.html',
-  styleUrls: ['./city.component.scss'],
-  animations: [routerTransition()]
+  styleUrls: ['./city.component.scss']
 })
 export class CityComponent implements OnInit {
   cityMaster: CityMaster[] = [];
@@ -29,6 +28,7 @@ export class CityComponent implements OnInit {
 
   public searchString: string;
   constructor(public apiService: APIService, private router: Router, public toastr: ToastrManager) {
+    debugger;
     this.apiService.selectedModel = CityMaster;
     this.bindAllCountry();
     this.bindAllCity();
@@ -51,17 +51,17 @@ export class CityComponent implements OnInit {
   }
 
   bindAllCountry() {
-    this.apiService.getService('CountryMasters').subscribe((data: any[]) => {
+    this.apiService.getService('CountryMasters').subscribe((data: CountryMaster[]) => {
       this.countryMaster = data;
     });
   }
 
   onSelectCountry(countryid) {
-    const test = this.countryMaster.filter((item) => item.CountryName === countryid)[0];
+    this.bindStateByCountryId(countryid);
   }
 
   bindStateByCountryId(Id) {
-    this.apiService.getModelListById('StateMasters', Id, 'GetStateByCountryId').subscribe((data: any[]) => {
+    this.apiService.getModelListById('StateMasters', Id, 'GetStateByCountryId').subscribe((data: StateMaster[]) => {
       this.stateMaster = data;
     });
   }
