@@ -5,6 +5,8 @@ import { APIService } from './../../shared/services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { CityMaster } from '../../model/citymaster';
+import { StateMaster } from '../../model/state';
+import { CountryMaster } from '../../model/country';
 import { ToastrManager } from 'ng6-toastr-notifications';
 import { from } from 'rxjs';
 
@@ -15,8 +17,8 @@ import { from } from 'rxjs';
 })
 export class CityComponent implements OnInit {
   cityMaster: CityMaster[] = [];
-  countryMaster: any;
-  stateMaster: any;
+  countryMaster: CountryMaster[] = [];
+  stateMaster: StateMaster[] = [];
 
   submitType = 'Save';
   selectedRow: number;
@@ -25,9 +27,10 @@ export class CityComponent implements OnInit {
   page = 1;
 
   public searchString: string;
-  constructor(private apiService: APIService, private router: Router, public toastr: ToastrManager) {
+  constructor(public apiService: APIService, private router: Router, public toastr: ToastrManager) {
     debugger;
     this.apiService.selectedModel = CityMaster;
+    this.bindAllCountry();
     this.bindAllCity();
   }
 
@@ -46,6 +49,23 @@ export class CityComponent implements OnInit {
       console.log(this.page);
     });
   }
+
+  bindAllCountry() {
+    this.apiService.getService('CountryMasters').subscribe((data: any[]) => {
+      this.countryMaster = data;
+    });
+  }
+
+  onSelectCountry(countryid) {
+    var test = this.countryMaster.filter((item) => item.CountryName === countryid)[0];
+  }
+
+  bindStateByCountryId(Id) {
+    this.apiService.getModelListById('StateMasters', Id, 'GetStateByCountryId').subscribe((data: any[]) => {
+      this.stateMaster = data;
+    });
+  }
+
   resetForm(cityForm?: NgForm) {
     if (cityForm != null) {
       cityForm.reset();

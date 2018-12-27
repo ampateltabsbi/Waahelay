@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
 
@@ -11,7 +11,7 @@ describe('AppComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        imports: [AppModule, BrowserAnimationsModule ],
+        imports: [AppModule],
         providers: [
           { provide: APP_BASE_HREF, useValue: '/' },
         ]

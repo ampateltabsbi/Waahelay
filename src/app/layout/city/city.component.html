@@ -15,11 +15,11 @@
             <div class="form-group row">
               <label class="col-lg-3 col-form-label form-control-label">Country</label>
               <div class="col-lg-9">
-                <select class="form-control">        
+                <select class="form-control" (change)="onSelectCountry($event.target.value)">        
                   <option [ngValue]="undefined" selected>Please Select</option>       
                   <option *ngFor="let _country of countryMaster"
                             [ngValue]="_country.ID">  
-                        {{_country.Name}}  
+                        {{_country.CountryName}}  
                 </select>
               </div>
             </div>
@@ -32,7 +32,7 @@
                   <option [ngValue]="undefined" selected>Please Select</option>       
                   <option *ngFor="let _state of stateMaster"
                             [ngValue]="_state.ID">  
-                        {{_state.Name}}  
+                        {{_state.StateName}}  
                 </select>
               </div>
             </div>
@@ -41,7 +41,7 @@
               <label class="col-lg-3 col-form-label form-control-label">City Name</label>
               <div class="col-lg-9">
                 <input class="form-control" type="text" name="CityName" #name="ngModel" [(ngModel)]="apiService.selectedModel.CityName"
-                  placeholder="Category Type">
+                  placeholder="City Name">
               </div>
             </div>
 
@@ -89,7 +89,7 @@
                       currentPage: page,
                       totalItems: totalRec };">
             <td>{{_city.StateMaster.StateName}}</td>
-            <td>{{_city.Name}}</td>
+            <td>{{_city.CityName}}</td>
             <td>{{_city.IsActive ? 'Yes':'No'}}</td>
             <td>
 
