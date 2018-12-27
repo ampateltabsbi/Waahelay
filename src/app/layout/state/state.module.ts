@@ -13,4 +13,4 @@ import { ToastrModule } from 'ng6-toastr-notifications';
   declarations: [StateComponent]
 })
 
-export class CategorytypeModule { }
+export class StateModule { }
