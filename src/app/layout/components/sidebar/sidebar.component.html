@@ -59,15 +59,7 @@
         <a style="display: none" [routerLink]="['/blank-page']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-file-o"></i>&nbsp;
             <span>{{ 'Blank Page' | translate }}</span>
-        </a>
-        <a [routerLink]="['/category']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-file"></i>&nbsp;
-            <span>{{ 'Category' | translate }}</span>
-        </a>
-        <a [routerLink]="['/categoryType']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-file"></i>&nbsp;
-            <span>{{ 'Category Type' | translate }}</span>
-        </a>
+        </a> 
         <a [routerLink]="['/city']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-file"></i>&nbsp;
             <span>{{ 'City' | translate }}</span>
@@ -80,6 +72,14 @@
             <i class="fa fa-file"></i>&nbsp;
             <span>{{ 'Country' | translate }}</span>
         </a>        
+        <a [routerLink]="['/category']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-file"></i>&nbsp;
+            <span>{{ 'Category' | translate }}</span>
+        </a>
+        <a [routerLink]="['/categoryType']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-file"></i>&nbsp;
+            <span>{{ 'Category Type' | translate }}</span>
+        </a>       
         <a style="display: none" [routerLink]="['/categorydescription']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-file-text"></i>
             <span>{{ 'Category Description' | translate }}</span>
