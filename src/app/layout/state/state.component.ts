@@ -40,7 +40,7 @@ export class StateComponent implements OnInit {
 
   onSubmit(stateForm: NgForm) {
     if (stateForm.value.ID === 0) {
-      this.apiService.addService(stateForm.value, 'StateMaster').subscribe(
+      this.apiService.addService(stateForm.value, 'StateMasters').subscribe(
         result => {
           this.resetForm();
           this.bindAllState();
@@ -51,7 +51,7 @@ export class StateComponent implements OnInit {
         }
       );
     } else {
-      this.apiService.updateService(stateForm.value, stateForm.value.ID, 'StateMaster').subscribe(
+      this.apiService.updateService(stateForm.value, stateForm.value.ID, 'StateMasters').subscribe(
         result => {
           this.resetForm();
           this.bindAllState();
@@ -87,7 +87,7 @@ export class StateComponent implements OnInit {
   }
 
   bindAllState() {
-    this.apiService.getService('StateMaster').subscribe((data: StateMaster[]) => {
+    this.apiService.getService('StateMasters').subscribe((data: StateMaster[]) => {
       this.state = data;
       this.totalRec = this.state.length;
       console.log(this.totalRec);
@@ -96,7 +96,7 @@ export class StateComponent implements OnInit {
   }
 
   bindActiveCountry() {
-    this.apiService.getService('CountryMaster').subscribe((data: CountryMaster[]) => {
+    this.apiService.getService('CountryMasters').subscribe((data: CountryMaster[]) => {
       const filterData = data.filter(x => x.IsActive === true);
       this.country = filterData;
     });

@@ -17,7 +17,7 @@
               <div class="col-lg-9">
                 <select class="form-control" name="CountryID" #name="ngModel" [(ngModel)]="apiService.selectedModel.CountryID"
                   required>        
-                  <option [ngValue]="undefined" selected>Please Select</option>       
+                  <option [ngValue]="0" selected>Please Select</option>       
                   <option *ngFor="let _country of country"
                             [ngValue]="_country.ID">  
                         {{_country.CountryName}}  
