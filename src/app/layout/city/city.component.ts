@@ -51,17 +51,17 @@ export class CityComponent implements OnInit {
   }
 
   bindAllCountry() {
-    this.apiService.getService('CountryMasters').subscribe((data: any[]) => {
+    this.apiService.getService('CountryMasters').subscribe((data: CountryMaster[]) => {
       this.countryMaster = data;
     });
   }
 
   onSelectCountry(countryid) {
-    var test = this.countryMaster.filter((item) => item.CountryName === countryid)[0];
+    this.bindStateByCountryId(countryid);
   }
 
   bindStateByCountryId(Id) {
-    this.apiService.getModelListById('StateMasters', Id, 'GetStateByCountryId').subscribe((data: any[]) => {
+    this.apiService.getModelListById('StateMasters', Id, 'GetStateByCountryId').subscribe((data: StateMaster[]) => {
       this.stateMaster = data;
     });
   }

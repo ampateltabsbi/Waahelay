@@ -15,7 +15,7 @@
             <div class="form-group row">
               <label class="col-lg-3 col-form-label form-control-label">Country</label>
               <div class="col-lg-9">
-                <select class="form-control" (change)="onSelectCountry($event.target.value)">        
+                <select class="form-control"  (change)="onSelectCountry($event.target.value)">        
                   <option [ngValue]="undefined" selected>Please Select</option>       
                   <option *ngFor="let _country of countryMaster"
                             [ngValue]="_country.ID">  
