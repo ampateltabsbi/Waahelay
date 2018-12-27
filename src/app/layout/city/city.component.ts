@@ -13,7 +13,8 @@ import { from } from 'rxjs';
 @Component({
   selector: 'app-city',
   templateUrl: './city.component.html',
-  styleUrls: ['./city.component.scss']
+  styleUrls: ['./city.component.scss'],
+  animations: [routerTransition()]
 })
 export class CityComponent implements OnInit {
   cityMaster: CityMaster[] = [];
@@ -28,7 +29,6 @@ export class CityComponent implements OnInit {
 
   public searchString: string;
   constructor(public apiService: APIService, private router: Router, public toastr: ToastrManager) {
-    debugger;
     this.apiService.selectedModel = CityMaster;
     this.bindAllCountry();
     this.bindAllCity();
@@ -57,7 +57,7 @@ export class CityComponent implements OnInit {
   }
 
   onSelectCountry(countryid) {
-    var test = this.countryMaster.filter((item) => item.CountryName === countryid)[0];
+    const test = this.countryMaster.filter((item) => item.CountryName === countryid)[0];
   }
 
   bindStateByCountryId(Id) {
