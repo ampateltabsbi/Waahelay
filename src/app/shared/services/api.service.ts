@@ -20,7 +20,7 @@ const httpOptions = {
 export class APIService {
   selectedModel: any;
   constructor(private http: HttpClient) { }
-  baseUrl = 'http://localhost:4201/api/';
+  baseUrl = 'http://localhost:6942/api/';
 
   getService(modelName) {
     return this.http.get(this.baseUrl + modelName).pipe(map(res => {

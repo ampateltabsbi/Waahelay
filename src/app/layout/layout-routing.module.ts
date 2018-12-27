@@ -21,7 +21,8 @@ const routes: Routes = [
             { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' },
             { path: 'category', loadChildren: './category/category.module#CategoryModule' },
             { path: 'categoryType', loadChildren: './categorytype/categorytype.module#CategorytypeModule' },
-            { path: 'categorydescription', loadChildren: './categorydescription/categorydescription.module#CategorydescriptionModule' }
+            { path: 'categorydescription', loadChildren: './categorydescription/categorydescription.module#CategorydescriptionModule' },
+            { path: 'country', loadChildren: './country/country.module#CountryModule' }
         ]
     }
 ];

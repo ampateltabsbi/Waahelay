@@ -8,10 +8,6 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
-import { CityComponent } from './city/city.component';
-import { StateComponent } from './state/state.component';
-import { CountryComponent } from './country/country.component';
-
 
 
 @NgModule({
@@ -22,6 +18,6 @@ import { CountryComponent } from './country/country.component';
         TranslateModule,
         NgbDropdownModule
     ],
-    declarations: [LayoutComponent, SidebarComponent, HeaderComponent, CityComponent, StateComponent, CountryComponent]
+    declarations: [LayoutComponent, SidebarComponent, HeaderComponent]
 })
 export class LayoutModule {}
