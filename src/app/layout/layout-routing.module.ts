@@ -22,7 +22,8 @@ const routes: Routes = [
             { path: 'category', loadChildren: './category/category.module#CategoryModule' },
             { path: 'categoryType', loadChildren: './categorytype/categorytype.module#CategorytypeModule' },
             { path: 'categorydescription', loadChildren: './categorydescription/categorydescription.module#CategorydescriptionModule' },
-            { path: 'country', loadChildren: './country/country.module#CountryModule' }
+            { path: 'country', loadChildren: './country/country.module#CountryModule' },
+            { path: 'city', loadChildren: './city/city.module#CityModule' }
         ]
     }
 ];
