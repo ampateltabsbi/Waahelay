@@ -3,8 +3,8 @@ import { routerTransition } from '../../router.animations';
 import { APIService } from './../../shared/services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { State } from './../../model/state';
-import { Country } from './../../model/country';
+import { StateMasterte } from './../../model/state';
+import { CountryMastery } from './../../model/country';
 import { ToastrManager } from 'ng6-toastr-notifications';
 
 @Component({
@@ -14,8 +14,8 @@ import { ToastrManager } from 'ng6-toastr-notifications';
   animations: [routerTransition()]
 })
 export class StateComponent implements OnInit {
-  state: State[] = [];
-  country: Country[] = [];
+  state: StateMasterte[] = [];
+  country: CountryMastery[] = [];
   submitType = 'Save';
   selectedRow: number;
 
@@ -25,7 +25,7 @@ export class StateComponent implements OnInit {
   public searchString: string;
 
   constructor(private apiService: APIService, private router: Router, public toastr: ToastrManager) {
-    this.apiService.selectedModel = State;
+    this.apiService.selectedModel = StateMasterte;
     this.bindAllState();
     this.bindActiveCountry();
   }
@@ -80,14 +80,14 @@ export class StateComponent implements OnInit {
 
   editState(stateId: number): void {
     this.selectedRow = stateId;
-    this.apiService.selectedModel = new State();
+    this.apiService.selectedModel = new StateMasterte();
     const tempState =  Object.assign({}, this.state.filter(t => t.ID === this.selectedRow));
     this.apiService.selectedModel = Object.assign({}, tempState[0]);
     this.submitType = 'Update';
   }
 
   bindAllState() {
-    this.apiService.getService('StateMaster').subscribe((data: State[]) => {
+    this.apiService.getService('StateMaster').subscribe((data: StateMasterte[]) => {
       this.state = data;
       this.totalRec = this.state.length;
       console.log(this.totalRec);
@@ -96,7 +96,7 @@ export class StateComponent implements OnInit {
   }
 
   bindActiveCountry() {
-    this.apiService.getService('CountryMaster').subscribe((data: Country[]) => {
+    this.apiService.getService('CountryMaster').subscribe((data: CountryMastery[]) => {
       const filterData = data.filter(x => x.IsActive === true);
       this.country = filterData;
     });
