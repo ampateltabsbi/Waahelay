@@ -20,7 +20,7 @@
                   <option [ngValue]="undefined" selected>Please Select</option>       
                   <option *ngFor="let _category of category"
                             [ngValue]="_category.ID">  
-                        {{_category.Name}}  
+                        {{_category.CategoryName}}  
                 </select>
               </div>
             </div>
@@ -28,7 +28,7 @@
             <div class="form-group row">
               <label class="col-lg-3 col-form-label form-control-label">Category Type</label>
               <div class="col-lg-9">
-                <input class="form-control" type="text" name="Name" #name="ngModel" [(ngModel)]="apiService.selectedModel.Name"
+                <input class="form-control" type="text" name="CategoryTypeName" #name="ngModel" [(ngModel)]="apiService.selectedModel.CategoryTypeName"
                   placeholder="Category Type" required>
               </div>
             </div>
@@ -77,8 +77,8 @@
                       itemsPerPage: 10,
                       currentPage: page,
                       totalItems: totalRec };">
-            <td>{{_categorytype.Category.Name}}</td>
-            <td>{{_categorytype.Name}}</td>
+            <td>{{_categorytype.Category.CategoryName}}</td>
+            <td>{{_categorytype.CategoryTypeName}}</td>
             <td>{{_categorytype.IsActive ? 'Yes':'No'}}</td>
             <td>
 

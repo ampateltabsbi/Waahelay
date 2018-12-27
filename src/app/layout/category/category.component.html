@@ -14,7 +14,7 @@
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">Category</label>
                             <div class="col-lg-9">
-                                <input class="form-control" type="text" name="Name" #name="ngModel" [(ngModel)]="apiService.selectedModel.Name"
+                                <input class="form-control" type="text" name="CategoryName" #name="ngModel" [(ngModel)]="apiService.selectedModel.CategoryName"
                                     placeholder="Category" required>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                         itemsPerPage: 5,
                         currentPage: page,
                         totalItems: totalRec };">
-                        <td>{{_category.Name}}</td>
+                        <td>{{_category.CategoryName}}</td>
                         <td>{{_category.IsActive ? 'Yes':'No'}}</td>
                         <td>
 

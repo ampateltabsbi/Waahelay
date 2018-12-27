@@ -70,7 +70,7 @@ export class CategorytypeComponent implements OnInit {
       this.apiService.selectedModel = [];
     }
     this.apiService.selectedModel = {
-      Name: '',
+      CategoryTypeName: '',
       ID: 0,
       CategoryID: 0,
       IsActive: false,
