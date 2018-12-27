@@ -3,4 +3,5 @@ export class CityMaster {
           CityName: string;
           StateID: number;
           IsActive: boolean;
+          CountryID: number;
 }

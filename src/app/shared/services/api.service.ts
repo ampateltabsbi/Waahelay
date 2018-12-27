@@ -43,9 +43,10 @@ export class APIService {
     return this.http.put(this.baseUrl + modelName + '/' + modeId, model);
   }
 
-  getModelListById(model, modeId, apiName) {
-    return this.http.put(this.baseUrl + apiName + '/' + modeId, model);
-  }
+
+  getModelListById = function (model, modeId, apiName) {
+    return this.http.get(this.baseUrl + apiName + '/' + modeId, model);
+};
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
