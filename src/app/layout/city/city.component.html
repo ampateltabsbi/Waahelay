@@ -15,7 +15,7 @@
               <label class="col-lg-3 col-form-label form-control-label">Country</label>
               <div class="col-lg-9">
                 <select class="form-control" name="CountryID" #name="ngModel" [(ngModel)]="selectedCountry.ID" (change)="onSelectCountry($event.target.value)" required>
-                  <option [ngValue]="undefined">Please Select</option>
+                  <option [ngValue]="0">Please Select</option>
                   <option *ngFor="let _country of countryMaster" value={{_country.ID}}> {{_country.CountryName}}
                   </option>
                 </select>
@@ -27,7 +27,7 @@
               <div class="col-lg-9">
                 <select class="form-control" name="StateID" #name="ngModel" [(ngModel)]="apiService.selectedModel.StateID"
                   required>
-                  <option [ngValue]="undefined">Please Select</option>
+                  <option [ngValue]="0">Please Select</option>
                   <option *ngFor="let _state of stateMaster" [ngValue]="_state.ID">
                     {{_state.StateName}}
                 </select>
@@ -52,7 +52,7 @@
             <div class="form-group row">
               <label class="col-lg-3 col-form-label form-control-label"></label>
               <div class="col-lg-2">
-                <button type="submit" class="btn btn-success" [disabled]="!cityForm.valid">
+                <button type="submit" class="btn btn-info" [disabled]="!cityForm.valid">
                   <i class="fa fa-floppy-o" aria-hidden="true"></i> {{submitType}}
                 </button>
               </div>
