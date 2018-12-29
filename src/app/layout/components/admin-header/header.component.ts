@@ -15,8 +15,7 @@ export class HeaderComponent implements OnInit {
     if (localStorage.getItem('isAdmin') === 'false') {
         this.IsAdmin = false;
         this.headerTitle = 'Waahelay Business Panel';
-    }
-    {
+    } else {
         this.headerTitle = 'Waahelay Admin Panel';
     }
 
