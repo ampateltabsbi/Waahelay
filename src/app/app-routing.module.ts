@@ -11,6 +11,10 @@ const routes: Routes = [
     { path: 'error', loadChildren: './server-error/server-error.module#ServerErrorModule' },
     { path: 'access-denied', loadChildren: './access-denied/access-denied.module#AccessDeniedModule' },
     { path: 'not-found', loadChildren: './not-found/not-found.module#NotFoundModule' },
+    { path: 'business-signup', loadChildren: './business-signup/business-signup.module#BusinessSignupModule' },
+
+    { path: 'business-login', loadChildren: './business-login/business-login.module#BusinessLoginModule' },
+
     { path: '**', redirectTo: 'not-found' }
 ];
 

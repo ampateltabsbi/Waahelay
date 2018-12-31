@@ -1,0 +1,50 @@
+<div class="login-page">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img class="user-avatar" src="assets/images/logo.png" width="150px" />
+            <h1 style="color:black; font-weight:bold">Start Claiming...</h1>
+
+            <div>
+                <label class="col-form-label form-control-label" style="color:black"> 
+                  Your business's page is now in the approval process to be added to Waahelay.
+                  Get started unclocking more benefits by creating an account and claiming this business.
+                </label>
+              </div>
+
+            <form role="form">
+                <div class="form-content">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-underline input-lg" id="" placeholder="{{ 'Full Name' | translate }}">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control input-underline input-lg" id="" placeholder="{{ 'Email' | translate }}">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control input-underline input-lg" id="" placeholder="{{ 'Password' | translate }}">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control input-underline input-lg" id="" placeholder="{{ 'Repeat Password' | translate }}">
+                    </div>
+                </div>
+                <a class="btn rounded-btn" [routerLink]="['/dashboard']">{{ 'Register' | translate }}</a>&nbsp;
+            </form>
+          
+        <br>
+            <div>
+                <label class="col-form-label form-control-label" style="color:black"> 
+                By continuing, you agree to Waahelay's  <a [routerLink]="['/signup']">{{ 'Terms of Service' | translate }}</a>
+                and acknowledge Waahelay's <a [routerLink]="['/signup']">{{ 'Privacy policy' | translate }}</a>
+              </label>
+              </div>
+              <br>
+              <div>
+                  <label class="col-form-label form-control-label" style="color:black"> 
+                 You also understand that Waahelay may send marketing emails about Waahelay's products,
+                services, and local events. You can unsubscribe at any time.
+                </label>
+                </div>
+        </div>
+    </div>
+</div>
