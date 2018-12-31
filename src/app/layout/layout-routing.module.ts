@@ -24,7 +24,8 @@ const routes: Routes = [
             { path: 'categorydescription', loadChildren: './categorydescription/categorydescription.module#CategorydescriptionModule' },
             { path: 'country', loadChildren: './country/country.module#CountryModule' },
             { path: 'state', loadChildren: './state/state.module#StateModule' },
-            { path: 'city', loadChildren: './city/city.module#CityModule' }
+            { path: 'city', loadChildren: './city/city.module#CityModule' },
+            { path: 'addbusinessdetail', loadChildren: './addbusinessdetail/addbusinessdetail.module#AddbusinessdetailModule' }
         ]
     }
 ];

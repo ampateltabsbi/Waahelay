@@ -96,6 +96,7 @@ export class CategorytypeComponent implements OnInit {
   }
 
   bindActiveCategory() {
+
     this.apiService.getService('Categories').subscribe((data: Category[]) => {
       const filterData = data.filter(x => x.IsActive === true);
       this.category = filterData;
