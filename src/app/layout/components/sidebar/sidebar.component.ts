@@ -12,14 +12,18 @@ export class SidebarComponent implements OnInit {
     collapsed: boolean;
     showMenu: string;
     pushRightClass: string;
-    public IsAdmin = true;
+    public IsAdminUser = true;
+    public IsBusinessUser = true;
 
     @Output() collapsedEvent = new EventEmitter<boolean>();
 
     constructor(private translate: TranslateService, public router: Router) {
 
-        if (localStorage.getItem('isAdmin') === 'false') {
-            this.IsAdmin = false;
+        if (localStorage.getItem('IsAdminUser') === 'false') {
+            this.IsAdminUser = false;
+        }
+        if (localStorage.getItem('IsBusinessUser') === 'false') {
+            this.IsBusinessUser = false;
         }
 
         this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de']);
@@ -84,5 +88,9 @@ export class SidebarComponent implements OnInit {
 
     onLoggedout() {
         localStorage.removeItem('isLoggedin');
+    }
+
+    onBusinessLoggedout() {
+        this.IsBusinessUser = true;
     }
 }

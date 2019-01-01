@@ -9,14 +9,16 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit {
   public pushRightClass: string;
-  public IsAdmin = true;
+  public IsAdminUser = true;
+  public IsBusinessUser = true;
   public headerTitle: string;
   constructor(private translate: TranslateService, public router: Router) {
-    if (localStorage.getItem('isAdmin') === 'false') {
-        this.IsAdmin = false;
-        this.headerTitle = 'Waahelay Business Panel';
-    } else {
-        this.headerTitle = 'Waahelay Admin Panel';
+    if (localStorage.getItem('IsAdminUser') === 'true') {
+      this.IsBusinessUser = false;
+      this.headerTitle = 'Waahelay Admin';
+    } else if (localStorage.getItem('IsBusinessUser') === 'true') {
+      this.IsAdminUser = false;
+      this.headerTitle = 'Waahelay Business';
     }
 
     this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS']);

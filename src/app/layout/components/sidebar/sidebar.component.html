@@ -1,5 +1,5 @@
-<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}" *ngIf="IsAdmin">
-    <div class="list-group">
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+    <div class="list-group" *ngIf="IsAdminUser">
         <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;
             <span>{{ 'Dashboard' | translate }}</span>
@@ -167,6 +167,32 @@
                 </li>
             </div>
         </div>
+    </div>
+    <div class="list-group" *ngIf="IsBusinessUser">
+            <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+                <span>{{ 'Dashboard' | translate }}</span>
+            </a>
+            <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-th-list"></i>&nbsp;
+                <span>{{ 'My Businesses' | translate }}</span>
+            </a>
+            <a [routerLink]="['/addbusinessdetail']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-plus"></i>&nbsp;
+                <span>{{ 'Add Business' | translate }}</span>
+            </a>
+            <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-star-o"></i>&nbsp;
+                <span>{{ 'Reviews' | translate }}</span>
+            </a>
+            <a [routerLink]="['/business-signup']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-user-o"></i>&nbsp;
+                <span>{{ 'My Profile' | translate }}</span>
+            </a>
+            <a [routerLink]="['/business-login']" (click)="onBusinessLoggedout()" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-power-off"></i>&nbsp;
+                <span>{{ 'Log Out' | translate }}</span>
+            </a>
     </div>
     <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
         <i class="fa fa-fw fa-angle-double-left"></i>&nbsp;

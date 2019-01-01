@@ -15,11 +15,13 @@ export class LandingPageComponent implements OnInit {
 
   onBusinessLoggedin() {
     localStorage.setItem('isLoggedin', 'true');
-    localStorage.setItem('isAdmin', 'false');
+    localStorage.setItem('IsAdminUser', 'false');
+    localStorage.setItem('IsBusinessUser', 'true');
   }
 
   onAdminLoggedin() {
     localStorage.setItem('isLoggedin', 'true');
-    localStorage.setItem('isAdmin', 'true');
+    localStorage.setItem('IsAdminUser', 'true');
+    localStorage.setItem('IsBusinessUser', 'false');
   }
 }
