@@ -9,9 +9,9 @@ import { routerTransition } from '../router.animations';
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
-  constructor() {debugger; }
+  constructor() { }
 
-  ngOnInit() {debugger; }
+  ngOnInit() { }
 
   onBusinessLoggedin() {
     localStorage.setItem('isLoggedin', 'true');
