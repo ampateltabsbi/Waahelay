@@ -15,7 +15,6 @@ import { ToastrManager } from 'ng6-toastr-notifications';
 export class AddbusinessdetailComponent implements OnInit {
 
   addbusinessdetail: BusineesDetail[] = [];
-  submitType = 'Save';
   selectedRow: number;
   totalRec: number;
   page = 1;
@@ -52,6 +51,10 @@ export class AddbusinessdetailComponent implements OnInit {
       AdditionalDetails: '',
       UserID: 0,
     };
-    this.submitType = 'Save';
   }
+
+  onAddBusiness() {
+debugger;
+    localStorage.setItem('isLoggedin', 'true');
+}
 }

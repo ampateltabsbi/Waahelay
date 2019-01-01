@@ -25,6 +25,7 @@ const routes: Routes = [
             { path: 'country', loadChildren: './country/country.module#CountryModule' },
             { path: 'state', loadChildren: './state/state.module#StateModule' },
             { path: 'city', loadChildren: './city/city.module#CityModule' },
+            { path: 'businessvarification', loadChildren: './businessvarifation/businessvarifation.module#BusinessvarificationModule' },
             { path: 'addbusinessdetail', loadChildren: './addbusinessdetail/addbusinessdetail.module#AddbusinessdetailModule' }
         ]
     }
@@ -35,3 +36,4 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 export class LayoutRoutingModule {}
+'';

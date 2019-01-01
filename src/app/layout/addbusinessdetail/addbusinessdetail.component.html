@@ -1,8 +1,15 @@
 <div [@routerTransition]>
   <app-page-header [heading]="'Add Business Details'" [icon]="'fa fa-file'"></app-page-header>
+  <div>
+    <label class="col-form-label form-control-label">
+      Add information about your business below. Your Business page will not appear in search results until this
+      information has been verified and approved by our moderators. Once it is approved, you will receive an email with
+      instructions on how to cliam your business page.
+    </label>
+  </div>
   <div class="container">
     <div>
-      <form #addbusinessdetailForm="ngForm" (ngSubmit)="onSubmit(addbusinessdetailForm)">
+      <form #addbusinessdetailForm="ngForm">
         <div class="card card-outline-secondary">
           <div class="card-body">
             <div class="form-group row">
@@ -107,18 +114,19 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-lg-3 col-form-label form-control-label"></label>
-                <div class="col-lg-2">
-                  <button type="submit" class="btn btn-info" [disabled]="!addbusinessdetailForm.valid">
-                    <i class="fa fa-floppy-o" aria-hidden="true"></i> {{submitType}}
-                  </button>
-                </div>
-                <div class="col-lg-2">
-                  <button type="submit" class="btn btn-danger" type="button" (click)="resetForm(addbusinessdetailForm)">
-                    <i class="fa fa-repeat"></i>
-                    Reset</button>
-                </div>
+              <label class="col-lg-3 col-form-label form-control-label"></label>
+              <div class="col-lg-2">
+                <button type="submit" class="btn btn-info" (click)="onAddBusiness()" [routerLink]="['/businessvarification']">
+                  <!-- [disabled]="!addbusinessdetailForm.valid"> -->
+                  <i class="fa fa-floppy-o" aria-hidden="true"></i> Add Business
+                </button>
               </div>
+              <div class="col-lg-2">
+                <button type="submit" class="btn btn-danger" type="button" (click)="resetForm(addbusinessdetailForm)">
+                  <i class="fa fa-repeat"></i>
+                  Reset</button>
+              </div>
+            </div>
 
           </div>
         </div>
