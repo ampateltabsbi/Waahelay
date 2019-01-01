@@ -15,10 +15,10 @@ export class HeaderComponent implements OnInit {
   constructor(private translate: TranslateService, public router: Router) {
     if (localStorage.getItem('IsAdminUser') === 'true') {
       this.IsBusinessUser = false;
-      this.headerTitle = 'Waahelay Admin';
+      this.headerTitle = 'Waahelay Admin Console';
     } else if (localStorage.getItem('IsBusinessUser') === 'true') {
       this.IsAdminUser = false;
-      this.headerTitle = 'Waahelay Business';
+      this.headerTitle = 'Waahelay Business Console';
     }
 
     this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS']);
