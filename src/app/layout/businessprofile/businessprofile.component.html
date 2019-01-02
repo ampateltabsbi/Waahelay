@@ -1,0 +1,39 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'My Profile'" [icon]="'fa fa-user-o'"></app-page-header>
+
+  <form #businessprofileForm="ngForm">
+    <div class="card card-outline-secondary">
+      <div class="card-body">
+        <div class="form-group row">
+          <div class="col-lg-3">
+            <img class="user-avatar" src="assets/images/logo1.png" height="90px;" />
+          </div>
+          <div class="col-lg-9">
+            <button type="submit" class="btn btn-info">
+              <i class="fa fa-pencil" aria-hidden="true"></i> Edit Profile
+            </button>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label" style="font-weight: bold;">First Name :</label>
+          <label class="col-lg-9 col-form-label form-control-label">Business User First Name</label>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label" style="font-weight: bold;">Last Name :</label>
+          <label class="col-lg-9 col-form-label form-control-label">Business User Last Name</label>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label" style="font-weight: bold;">Phone :</label>
+          <label class="col-lg-9 col-form-label form-control-label">0555 888 3636</label>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label" style="font-weight: bold;">Email :</label>
+          <label class="col-lg-9 col-form-label form-control-label">business@waahelay.com</label>
+        </div>
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label" style="font-weight: bold;">Password :</label>
+          <label class="col-lg-9 col-form-label form-control-label">*********</label>
+        </div>
+      </div>
+    </div>
+  </form>

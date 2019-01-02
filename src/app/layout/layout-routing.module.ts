@@ -26,7 +26,10 @@ const routes: Routes = [
             { path: 'state', loadChildren: './state/state.module#StateModule' },
             { path: 'city', loadChildren: './city/city.module#CityModule' },
             { path: 'businessvarification', loadChildren: './businessvarifation/businessvarifation.module#BusinessvarificationModule' },
-            { path: 'addbusinessdetail', loadChildren: './addbusinessdetail/addbusinessdetail.module#AddbusinessdetailModule' }
+            { path: 'addbusinessdetail', loadChildren: './addbusinessdetail/addbusinessdetail.module#AddbusinessdetailModule' },
+            { path: 'businessprofile', loadChildren: './businessprofile/businessprofile.module#BusinessprofileModule' },
+            { path: 'businessreview', loadChildren: './businessreview/businessreview.module#BusinessreviewModule' },
+            { path: 'businesslist', loadChildren: './businesslist/businesslist.module#BusinesslistModule' }
         ]
     }
 ];

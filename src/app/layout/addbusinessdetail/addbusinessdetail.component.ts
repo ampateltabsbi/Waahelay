@@ -13,7 +13,6 @@ import { ToastrManager } from 'ng6-toastr-notifications';
   animations: [routerTransition()]
 })
 export class AddbusinessdetailComponent implements OnInit {
-
   addbusinessdetail: BusineesDetail[] = [];
   selectedRow: number;
   totalRec: number;
@@ -49,12 +48,11 @@ export class AddbusinessdetailComponent implements OnInit {
       EmailVerified: false,
       PhoneVerified: false,
       AdditionalDetails: '',
-      UserID: 0,
+      UserID: 0
     };
   }
 
   onAddBusiness() {
-debugger;
     localStorage.setItem('isLoggedin', 'true');
-}
+  }
 }
