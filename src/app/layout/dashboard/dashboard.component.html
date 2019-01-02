@@ -1,38 +1,23 @@
 <div [@routerTransition]>
 
   <div *ngIf="IsAdminUser">
-        <div class="row">
-                <div class="col col-sm-12">
-                  <div class="card mb-3">
-                    <div class="card-header" style="color:#1C77C0">
-                      <i class="fa fa-fw fa-dashboard"></i> Admin Dashboard
-                    </div>
-                    <div class="card-body">
-          
-                    </div>
-                    <!-- <div class="card-footer">
-                                  <button class="btn btn-info btn-sm">Update</button>
-                              </div> -->
-                  </div>
-                </div>
-              </div>
+    <app-page-header [heading]="'Admin Dashboard'" [icon]="'fa fa-fw fa-dashboard'"></app-page-header>
   </div>
 
   <div *ngIf="IsBusinessUser">
-    <div class="row">
-      <div class="col col-sm-12">
-        <div class="card mb-3">
-          <div class="card-header" style="color:#1C77C0">
-            <i class="fa fa-fw fa-dashboard"></i> Business Dashboard
-          </div>
-          <div class="card-body">
-          
-          </div>
-          <!-- <div class="card-footer">
-                        <button class="btn btn-info btn-sm">Update</button>
-                    </div> -->
-        </div>
-      </div>
+    <app-page-header [heading]="'Business Dashboard'" [icon]="'fa fa-fw fa-dashboard'"></app-page-header>
+    <br />
+    <div class="dashboard-info color-1">
+      <h4>6</h4> <span>Business Listings</span>
+    </div>
+    <div class="dashboard-info color-2">
+      <h4>1234</h4> <span>Total Views</span>
+    </div>
+    <div class="dashboard-info color-3">
+      <h4>456</h4> <span>Total Reviews</span>
+    </div>
+    <div class="dashboard-info color-4">
+      <h4>3</h4> <span>Published Listings</span>
     </div>
   </div>
   <!-- <h2 class="text-muted"><small> Waahelay Overview</small></h2> -->

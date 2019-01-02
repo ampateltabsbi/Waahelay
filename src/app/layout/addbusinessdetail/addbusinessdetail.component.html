@@ -7,128 +7,124 @@
       instructions on how to cliam your business page.
     </label>
   </div>
-  <div class="container">
-    <div>
-      <form #addbusinessdetailForm="ngForm">
-        <div class="card card-outline-secondary">
-          <div class="card-body">
-            <div class="form-group row">
-              <div class="col-lg-12">
-                <input class="form-control" type="hidden" name="ID" #name="ngModel" [(ngModel)]="apiService.selectedModel.ID"
-                  required>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-lg-3 col-form-label form-control-label">Country</label>
-              <div class="col-lg-9">
-                <select class="form-control" name="CountryID" #name="ngModel" [(ngModel)]="apiService.selectedModel.CountryID"
-                  required>
-                  <option [ngValue]="undefined">Please Select</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-lg-3 col-form-label form-control-label">Business Name</label>
-              <div class="col-lg-9">
-                <input class="form-control" type="text" name="BusinessName" #name="ngModel" [(ngModel)]="apiService.selectedModel.BusinessName"
-                  placeholder="Business Name" required>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-lg-3 col-form-label form-control-label">Business Address 1</label>
-              <div class="col-lg-9">
-                <input class="form-control" type="text" name="BusinessAddress1" #name="ngModel" [(ngModel)]="apiService.selectedModel.BusinessAddress1"
-                  placeholder="Business Address 1" required>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-lg-3 col-form-label form-control-label">Business Address 2</label>
-              <div class="col-lg-9">
-                <input class="form-control" type="text" name="BusinessAddress2" #name="ngModel" [(ngModel)]="apiService.selectedModel.BusinessAddress2"
-                  placeholder="Business Address 2" required>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-lg-3 col-form-label form-control-label">State</label>
-              <div class="col-lg-9">
-                <select class="form-control" name="StateID" #name="ngModel" [(ngModel)]="apiService.selectedModel.StateID"
-                  required>
-                  <option [ngValue]="0">Please Select</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-lg-3 col-form-label form-control-label">City</label>
-              <div class="col-lg-9">
-                <select class="form-control" name="CityID" #name="ngModel" [(ngModel)]="apiService.selectedModel.CityID"
-                  required>
-                  <option [ngValue]="0">Please Select</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-lg-3 col-form-label form-control-label">Post Code</label>
-              <div class="col-lg-9">
-                <input class="form-control" type="text" name="PostCode" #name="ngModel" [(ngModel)]="apiService.selectedModel.PostCode"
-                  placeholder="Post Code" required>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-lg-3 col-form-label form-control-label">Phone</label>
-              <div class="col-lg-9">
-                <input class="form-control" type="text" name="Phone" #name="ngModel" [(ngModel)]="apiService.selectedModel.Phone"
-                  placeholder="Phone" required>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-lg-3 col-form-label form-control-label">Email</label>
-              <div class="col-lg-9">
-                <input class="form-control" type="text" name="Email" #name="ngModel" [(ngModel)]="apiService.selectedModel.Email"
-                  placeholder="Email" required>
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-lg-3 col-form-label form-control-label">Web Address</label>
-              <div class="col-lg-9">
-                <input class="form-control" type="text" name="Website" #name="ngModel" [(ngModel)]="apiService.selectedModel.Website"
-                  placeholder="Web Address">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-lg-3 col-form-label form-control-label">Additional Details</label>
-              <div class="col-lg-9">
-                <input class="form-control" type="text" name="AdditionalDetails" #name="ngModel" [(ngModel)]="apiService.selectedModel.AdditionalDetails"
-                  placeholder="Additional Details">
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <label class="col-lg-3 col-form-label form-control-label"></label>
-              <div class="col-lg-2">
-                <button type="submit" class="btn btn-info" (click)="onAddBusiness()" [routerLink]="['/businessvarification']">
-                  <i class="fa fa-floppy-o" aria-hidden="true"></i> Submit
-                </button>
-              </div>
-              <div class="col-lg-2">
-                <button type="submit" class="btn btn-danger" type="button" (click)="resetForm(addbusinessdetailForm)">
-                  <i class="fa fa-repeat"></i>
-                  Reset</button>
-              </div>
-            </div>
-
+  <form #addbusinessdetailForm="ngForm">
+    <div class="card card-outline-secondary">
+      <div class="card-body">
+        <div class="form-group row">
+          <div class="col-lg-12">
+            <input class="form-control" type="hidden" name="ID" #name="ngModel" [(ngModel)]="apiService.selectedModel.ID"
+              required>
           </div>
         </div>
-      </form>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Country</label>
+          <div class="col-lg-6">
+            <select class="form-control" name="CountryID" #name="ngModel" [(ngModel)]="apiService.selectedModel.CountryID"
+              required>
+              <option [ngValue]="undefined">Please Select</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Business Name</label>
+          <div class="col-lg-6">
+            <input class="form-control" type="text" name="BusinessName" #name="ngModel" [(ngModel)]="apiService.selectedModel.BusinessName"
+              placeholder="Business Name" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Business Address 1</label>
+          <div class="col-lg-6">
+            <input class="form-control" type="text" name="BusinessAddress1" #name="ngModel" [(ngModel)]="apiService.selectedModel.BusinessAddress1"
+              placeholder="Business Address 1" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Business Address 2</label>
+          <div class="col-lg-6">
+            <input class="form-control" type="text" name="BusinessAddress2" #name="ngModel" [(ngModel)]="apiService.selectedModel.BusinessAddress2"
+              placeholder="Business Address 2" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">State</label>
+          <div class="col-lg-6">
+            <select class="form-control" name="StateID" #name="ngModel" [(ngModel)]="apiService.selectedModel.StateID"
+              required>
+              <option [ngValue]="0">Please Select</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">City</label>
+          <div class="col-lg-6">
+            <select class="form-control" name="CityID" #name="ngModel" [(ngModel)]="apiService.selectedModel.CityID"
+              required>
+              <option [ngValue]="0">Please Select</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Post Code</label>
+          <div class="col-lg-6">
+            <input class="form-control" type="text" name="PostCode" #name="ngModel" [(ngModel)]="apiService.selectedModel.PostCode"
+              placeholder="Post Code" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Phone</label>
+          <div class="col-lg-6">
+            <input class="form-control" type="text" name="Phone" #name="ngModel" [(ngModel)]="apiService.selectedModel.Phone"
+              placeholder="Phone" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Email</label>
+          <div class="col-lg-6">
+            <input class="form-control" type="text" name="Email" #name="ngModel" [(ngModel)]="apiService.selectedModel.Email"
+              placeholder="Email" required>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Web Address</label>
+          <div class="col-lg-6">
+            <input class="form-control" type="text" name="Website" #name="ngModel" [(ngModel)]="apiService.selectedModel.Website"
+              placeholder="Web Address">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Additional Details</label>
+          <div class="col-lg-6">
+            <input class="form-control" type="text" name="AdditionalDetails" #name="ngModel" [(ngModel)]="apiService.selectedModel.AdditionalDetails"
+              placeholder="Additional Details">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label"></label>
+          <div class="col-lg-2">
+            <button type="submit" class="btn btn-info" (click)="onAddBusiness()" [routerLink]="['/businessvarification']">
+              <i class="fa fa-floppy-o" aria-hidden="true"></i> Submit
+            </button>
+          </div>
+          <div class="col-lg-2">
+            <button type="submit" class="btn btn-danger" type="button" (click)="resetForm(addbusinessdetailForm)">
+              <i class="fa fa-repeat"></i>
+              Reset</button>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
+  </form>
