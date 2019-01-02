@@ -1,18 +1,72 @@
 <div class="row">
-    <div class="col-xl-12">
-        <!-- <h2 class="page-header">
+  <div class="col-xl-12">
+    <!-- <h2 class="page-header">
             {{heading}}
         </h2> -->
+    <div *ngIf="isBreadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active"><i class="fa {{icon}}"></i> {{heading}}</li>
+      </ol>
 
-         <ol class="breadcrumb">
-                <li class="breadcrumb-item active"><i class="fa {{icon}}"></i> {{heading}}</li>
-        </ol>
-
-        <!-- <ol class="breadcrumb">
+      <!-- <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <i class="fa fa-dashboard"></i> <a href="Javascript:void(0)" [routerLink]="['/dashboard']">Dashboard</a>
             </li>
             <li class="breadcrumb-item active"><i class="fa {{icon}}"></i> {{heading}}</li>
         </ol> -->
     </div>
+    <div *ngIf="isAdminTabs">
+      <ngb-tabset #tabs [activeId]="selectedTab" #tabs (tabChange)="onTabChange($event)" class="nav">
+        <ngb-tab id="details">
+          <ng-template ngbTabTitle>
+            <a [routerLink]="['/']">Location</a>
+          </ng-template>
+          <ng-template ngbTabContent>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab id="contacts">
+          <ng-template ngbTabTitle>
+            <a [routerLink]="['/']">Business Hours</a>
+          </ng-template>
+          <ng-template ngbTabContent>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab id="appointments">
+          <ng-template ngbTabTitle>
+            <a [routerLink]="['/']">Specialist</a>
+          </ng-template>
+          <ng-template ngbTabContent>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab id="followups">
+          <ng-template ngbTabTitle>
+            <a [routerLink]="['/']">Offers</a>
+          </ng-template>
+          <ng-template ngbTabContent>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab id="followups">
+          <ng-template ngbTabTitle>
+            <a [routerLink]="['/']">Images</a>
+          </ng-template>
+          <ng-template ngbTabContent>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab id="followups">
+          <ng-template ngbTabTitle>
+            <a [routerLink]="['/']">Videors</a>
+          </ng-template>
+          <ng-template ngbTabContent>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab id="followups">
+          <ng-template ngbTabTitle>
+            <a [routerLink]="['/']">Business Information</a>
+          </ng-template>
+          <ng-template ngbTabContent>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+    </div>
+  </div>
 </div>

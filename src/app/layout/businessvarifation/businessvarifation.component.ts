@@ -32,4 +32,8 @@ export class BusinessvarifationComponent implements OnInit {
     this.inboxSMS = false;
     this.inboxPayment = true;
   }
+
+  onPaymentClick() {
+    localStorage.setItem('IsAdminTabs', 'true');
+  }
 }

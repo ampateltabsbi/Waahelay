@@ -11,6 +11,7 @@ import {
 } from './components';
 import { StatModule } from '../../shared';
 
+
 @NgModule({
     imports: [
         CommonModule,
