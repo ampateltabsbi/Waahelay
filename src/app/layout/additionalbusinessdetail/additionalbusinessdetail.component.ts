@@ -24,6 +24,10 @@ export class AdditionalbusinessdetailComponent implements OnInit, AfterViewCheck
    @ViewChild('tabs')
    private tabs: NgbTabset;
 
+//    title = 'My first AGM project';
+   lat = 22.3133;
+   lng = 73.1766;
+
   constructor(private route: ActivatedRoute, private router: Router) {
         this.route.data.subscribe(d => {
             this.selectedTab = d.name;
@@ -52,16 +56,16 @@ export class AdditionalbusinessdetailComponent implements OnInit, AfterViewCheck
         this.router.navigate(['additionalbusinessdetail/businessreview'], { skipLocationChange: true});
       }
 
-    onTabChange($event: NgbTabChangeEvent) {
-        const routes = {
-            category: 'category',
-            addbusinessdetail: 'addbusinessdetail',
-            followups: `/prospect/${this.prospectId}/followups`,
-            notes: `/prospect/${this.prospectId}/notes`,
-            dials: `/prospect/${this.prospectId}/dials`,
-        };
+    // onTabChange($event: NgbTabChangeEvent) {
+    //     const routes = {
+    //         category: 'category',
+    //         addbusinessdetail: 'addbusinessdetail',
+    //         followups: `/prospect/${this.prospectId}/followups`,
+    //         notes: `/prospect/${this.prospectId}/notes`,
+    //         dials: `/prospect/${this.prospectId}/dials`,
+    //     };
 
-        this.router.navigateByUrl(routes[$event.nextId]);
-    }
+    //     this.router.navigateByUrl(routes[$event.nextId]);
+    // }
 
 }

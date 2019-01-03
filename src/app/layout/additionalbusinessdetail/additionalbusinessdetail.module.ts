@@ -8,10 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ToastrModule } from 'ng6-toastr-notifications';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AgmCoreModule } from '@agm/core';
+
 
 @NgModule({
   imports: [CommonModule, AdditionalbusinessdetailRoutingModule, PageHeaderModule, FormsModule, NgxPaginationModule,
-    ToastrModule.forRoot(), NgbModule.forRoot()],
+    ToastrModule.forRoot(), NgbModule.forRoot(), AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDTRgKtWpd3ZTBytyiDtiaUIPOJN24hAHI'
+    })],
   declarations: [AdditionalbusinessdetailComponent]
 })
 export class AdditionalbusinessdetailModule { }

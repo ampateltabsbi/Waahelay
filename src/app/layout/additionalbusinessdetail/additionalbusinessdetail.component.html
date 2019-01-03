@@ -1,54 +1,42 @@
 <div>
-  <app-page-header [heading]="'Add Business Details'" [icon]="'fa fa-plus'"></app-page-header>>
-    <ngb-tabset #tabs [activeId]="selectedTab" #tabs (tabChange)="onTabChange($event)" class="nav">
-      <ngb-tab id="details">
-        <ng-template ngbTabTitle>
-          <a [routerLink]="['/category']">Location</a>
-        </ng-template>
+  <app-page-header [heading]="'Add Business Details'" [icon]="'fa fa-plus'"></app-page-header>
+  <!-- <ngb-tabset type="pills">
+    <ngb-tab title="Location">
+      <ng-template ngbTabContent>
+      
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab title="Business Hours">
+      <ng-template ngbTabContent>
+
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab title="Specialist">
+      <ng-template ngbTabContent>
+
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset> -->
+
+
+
+  <ngb-tabset>
+      <ngb-tab title="Location">
         <ng-template ngbTabContent>
+        <br>
+            <agm-map [latitude]="lat" [longitude]="lng">
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+              </agm-map>
+          
         </ng-template>
       </ngb-tab>
-      <ngb-tab id="contacts">
-        <ng-template ngbTabTitle>
-          <a [routerLink]="['/addbusinessdetail']" (click)="onBusinessHours()">Business Hours</a>
-        </ng-template>
+      <ngb-tab title="Business Hours">
         <ng-template ngbTabContent>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab id="appointments">
-        <ng-template ngbTabTitle>
-          <a [routerLink]="['/']" (click)="onSpecialist()">Specialist</a>
-        </ng-template>
-        <ng-template ngbTabContent>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab id="followups">
-        <ng-template ngbTabTitle>
-          <a [routerLink]="['/']">Offers</a>
-        </ng-template>
-        <ng-template ngbTabContent>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab id="followups">
-        <ng-template ngbTabTitle>
-          <a [routerLink]="['/']">Images</a>
-        </ng-template>
-        <ng-template ngbTabContent>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab id="followups">
-        <ng-template ngbTabTitle>
-          <a [routerLink]="['/']">Videors</a>
-        </ng-template>
-        <ng-template ngbTabContent>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab id="followups">
-        <ng-template ngbTabTitle>
-          <a [routerLink]="['/']">Business Information</a>
-        </ng-template>
-        <ng-template ngbTabContent>
+         <br>
+
         </ng-template>
       </ngb-tab>
     </ngb-tabset>
-  </div>
+</div>
