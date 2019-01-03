@@ -29,7 +29,9 @@ const routes: Routes = [
             { path: 'addbusinessdetail', loadChildren: './addbusinessdetail/addbusinessdetail.module#AddbusinessdetailModule' },
             { path: 'businessprofile', loadChildren: './businessprofile/businessprofile.module#BusinessprofileModule' },
             { path: 'businessreview', loadChildren: './businessreview/businessreview.module#BusinessreviewModule' },
-            { path: 'businesslist', loadChildren: './businesslist/businesslist.module#BusinesslistModule' }
+            { path: 'businesslist', loadChildren: './businesslist/businesslist.module#BusinesslistModule' },
+            // tslint:disable-next-line:max-line-length
+            { path: 'additionalbusinessdetail', loadChildren: './additionalbusinessdetail/additionalbusinessdetail.module#AdditionalbusinessdetailModule' }
         ]
     }
 ];
