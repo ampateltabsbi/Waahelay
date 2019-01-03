@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ToastrModule } from 'ng6-toastr-notifications';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule, MouseEvent } from '@agm/core';
 
 
 @NgModule({
