@@ -19,10 +19,6 @@ import { MouseEvent } from '@agm/core';
 })
 export class AdditionalbusinessdetailComponent implements OnInit, AfterViewChecked {
 
-//    title = 'My first AGM project';
-//    lat = 22.3133;
-//    lng = 73.1766;
-
   constructor(private route: ActivatedRoute, private router: Router) {
         this.route.data.subscribe(d => {
             this.selectedTab = d.name;
